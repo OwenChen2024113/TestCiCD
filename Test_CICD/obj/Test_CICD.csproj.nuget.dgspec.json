@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ohyagroup1/Documents/GitHub/TestCiCD/Test_CICD/Test_CICD/Test_CICD.csproj": {}
+    "/Users/ohyagroup1/Documents/GitHub/TestCiCD/Test_CICD/Test_CICD.csproj": {}
   },
   "projects": {
-    "/Users/ohyagroup1/Documents/GitHub/TestCiCD/Test_CICD/Test_CICD/Test_CICD.csproj": {
+    "/Users/ohyagroup1/Documents/GitHub/TestCiCD/Test_CICD/Test_CICD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ohyagroup1/Documents/GitHub/TestCiCD/Test_CICD/Test_CICD/Test_CICD.csproj",
+        "projectUniqueName": "/Users/ohyagroup1/Documents/GitHub/TestCiCD/Test_CICD/Test_CICD.csproj",
         "projectName": "Test_CICD",
-        "projectPath": "/Users/ohyagroup1/Documents/GitHub/TestCiCD/Test_CICD/Test_CICD/Test_CICD.csproj",
+        "projectPath": "/Users/ohyagroup1/Documents/GitHub/TestCiCD/Test_CICD/Test_CICD.csproj",
         "packagesPath": "/Users/ohyagroup1/.nuget/packages/",
-        "outputPath": "/Users/ohyagroup1/Documents/GitHub/TestCiCD/Test_CICD/Test_CICD/obj/",
+        "outputPath": "/Users/ohyagroup1/Documents/GitHub/TestCiCD/Test_CICD/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ohyagroup1/.nuget/NuGet/NuGet.Config"
