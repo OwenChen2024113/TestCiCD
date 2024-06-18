@@ -1,7 +1,6 @@
 on:
- push:
-  branches:
-  - Test
+  push:
+    branches: [ "Test" ]
 
 jobs:
   testEcho:
