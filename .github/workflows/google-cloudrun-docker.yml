@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "main" ]
 env:
-  IMAGE_INFO: "${{ vars.GAR_LOCATION }}-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${{ vars.GAR_NAME }}/${{ vars.GCR_SERVICE }}:testcicd-${{ github.run_number }}"
+  IMAGE_INFO: "${{ vars.GAR_LOCATION }}-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${{ vars.GAR_NAME }}/${{ vars.GCR_SERVICE }}:ver-${{ github.run_number }}"
   
 jobs:
   deploy:
