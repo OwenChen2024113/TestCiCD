@@ -1,9 +1,16 @@
+# 顯示在 Action 執行時的總名稱
 name: Build and Deploy to Cloud Run
 
+# 指定觸發事件/分支等
+# 其他事件可參考 https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
 on:
   push:
     branches: [ "main" ]
+
+# 設定環境變數
 env:
+  # 映像檔配置的資訊，vars. 由預先建好的 repository variables 變數 提供
+  # github. 是內建的變數，用 ver-${{ github.run_number }} 當作 tag 識別，run_number 代表這個yml第幾次被執行
   IMAGE_INFO: "${{ vars.GAR_LOCATION }}-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${{ vars.GAR_NAME }}/${{ vars.GCR_SERVICE }}:ver-${{ github.run_number }}"
   
 jobs:
@@ -18,6 +25,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      # 登入Goolge驗證這個GitHub Action 是否可以存取資源
+      # 使用WIF機制，具體設定須至 Slack 文件參照
+      # secrets. 是預先建立好的加密變數
       - name: Google Auth
         id: auth
         uses: 'google-github-actions/auth@v2'
@@ -26,28 +36,27 @@ jobs:
           workload_identity_provider: '${{ secrets.WIF_PROVIDER }}'
           service_account: '${{ secrets.WIF_SERVICE_ACCOUNT }}'
           
-      # BEGIN - Docker auth and build
-      # Authenticate Docker to Google Cloud Artifact Registry
+      #驗證映像檔是否能被配置到對應的 GCP Artifact Registry 存放區
+      #如果服務帳戶沒有充分授權 Artifact Registry API，或是前面的 Google Auth 沒有被正確執行，這裡會有錯誤
       - name: Docker Auth
         run: |-
           gcloud auth configure-docker "${{ vars.GAR_LOCATION }}-docker.pkg.dev"
-        
+          
+      #將映像檔建立成容器，並推上 GCP Artifact Registry 存放區
       - name: Build and Push Container
         run: |-
           docker build -t "${{env.IMAGE_INFO}}" ./
           docker push "${{env.IMAGE_INFO}}"
 
-      # END - Docker auth and build
-
+      #開始部署到 Cloud Run 
       - name: Deploy to Cloud Run
         id: deploy
         uses: google-github-actions/deploy-cloudrun@v2
         with:
           service: '${{ vars.GCR_SERVICE }}'
           region: '${{ vars.GCR_REGION }}'
-          # NOTE: If using a pre-built image, update the image name here
           image: "${{env.IMAGE_INFO}}"
 
-      # If required, use the Cloud Run url output in later steps
+      #顯示部署好的網址
       - name: Show Output
         run: echo ${{ steps.deploy.outputs.url }}
