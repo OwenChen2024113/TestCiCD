@@ -1,19 +1,26 @@
-﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{5181C6E2-0CA4-498B-AF80-860EB0BF3535}|Default">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+﻿<Properties StartupConfiguration="{5181C6E2-0CA4-498B-AF80-860EB0BF3535}|Default" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Test__CICD PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Test_CICD/Controllers/WeatherForecastController.cs">
     <Files>
-      <File FileName="Test_CICD/Controllers/WeatherForecastController.cs" Line="19" Column="6" />
+      <File FileName="Test_CICD/Controllers/WeatherForecastController.cs" Line="36" Column="29" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State name="__root__" />
+        <State name="__root__">
+          <Node name="Test_CICD">
+            <Node name="Test_CICD">
+              <Node name="appsettings.json" expanded="True" />
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Test__CICD PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
 </Properties>
