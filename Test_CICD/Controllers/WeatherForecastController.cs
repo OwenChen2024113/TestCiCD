@@ -33,7 +33,7 @@ public class WeatherForecastController : ControllerBase
     [HttpPost(Name = "Hello")]
     public string Post()
     {
-        return "Hello Test 5";
+        return "Hello Test 6";
     }
 }
 
