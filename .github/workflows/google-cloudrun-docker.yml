@@ -72,7 +72,7 @@ jobs:
         uses: 'google-github-actions/auth@v2'
         with:
           token_format: 'access_token'
-          workload_identity_provider: 'projects/735327565940/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
+          workload_identity_provider: 'projects/735327565940/locations/global/workloadIdentityPools/github-actions/providers/github'
           service_account: 'test-githubaction-deploy-cloud@owen-426709.iam.gserviceaccount.com' # e.g. -  my-service-account@my-project.iam.gserviceaccount.com
           
       # NOTE: Alternative option - authentication via credentials json
