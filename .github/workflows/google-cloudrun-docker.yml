@@ -28,7 +28,7 @@ jobs:
       # Authenticate Docker to Google Cloud Artifact Registry
       - name: Docker Auth
         run: |-
-          gcloud auth configure-docker "${{ github.GAR_LOCATION }}-docker.pkg.dev"
+          gcloud auth configure-docker "${{ vars.GAR_LOCATION }}-docker.pkg.dev"
         
       - name: Build and Push Container
         run: |-
